@@ -1,8 +1,17 @@
-# Nuke-AMSI
- NukeAMSI is a powerful tool designed to neutralize the Antimalware Scan Interface (AMSI) in Windows environments. Developed for educational purposes, this script enables users to disable AMSI protections within the current PowerShell session, allowing for the execution of scripts that would typically be flagged or blocked by Windows Defender and other antivirus solutions.
+
+![banner](https://s11.gifyu.com/images/SysSH.gif)<br>
+The AMSI Nuke Script !is a PowerShell-based utility designed to modify the Anti-Malware Scan Interface (AMSI) in running PowerShell processes. This script exploits Windows API functions to alter the memory of the amsi.dll, effectively disabling its malware scanning capabilities. It serves as an educational tool for security researchers and penetration testers to understand AMSI's role in malware defense and the implications of circumventing such mechanisms.
+
+### Concepts utilized
+- Anti-Malware Scan Interface (AMSI) : The Windows Antimalware Scan Interface (AMSI) is a pivotal component in Microsoft’s security architecture, designed to enhance the detection of malicious scripts and behaviors by providing applications and services with a standardized interface to request content scans. As cyber threats evolve, so do the techniques employed by attackers to evade such defenses.
+<br><br><ins>AMSI in action when it catches a malicious script being executed</ins><br><br>
+![Amsi in action](https://sensepost.com/img/pages/blog/2020/resurrecting-an-old-amsi-bypass/2.0-amsi-detection-example.png)
+
+- Windows API Functions:
+Utilized to manipulate process memory and load dynamic link libraries (NTDll.dll & Kernel32.dll).
+Functions include NtOpenProcess, NtWriteVirtualMemory, VirtualProtectEx, and others.
 
 ### Key Features
-
 - *Direct Memory Manipulation*: NukeAMSI utilizes direct memory manipulation techniques to disable AMSI, leveraging the ntdll library and other critical Windows APIs. This ensures that AMSI is effectively bypassed without raising alerts or triggering additional security measures.
   
 - *Stealth Operations*: The tool operates in-memory, meaning it leaves no trace on disk. This makes it particularly useful in scenarios where maintaining operational security is paramount.
@@ -19,27 +28,23 @@ NukeAMSI uses several advanced techniques to achieve its goals:
   
 - *Advanced Error Handling*: NukeAMSI includes robust error handling to ensure smooth operation even in complex environments. It carefully checks for and handles potential failures, reducing the likelihood of detection or script failure.
 
-### Why NukeAMSI Outperforms Traditional Methods
 
-While traditional AMSI bypass techniques often rely on patching or manipulating specific AMSI-related functions, these methods are increasingly ineffective as antivirus software evolves. NukeAMSI takes a more sophisticated approach, targeting AMSI at the root level via direct memory access. This not only makes the bypass more reliable but also significantly reduces the chances of detection.
-
-### Usage and Disclaimer
-
-*Note: This tool is intended for **educational purposes only*. It should be used responsibly and in compliance with all relevant laws and regulations. Unaut
-horized use of this tool on systems you do not own or have explicit permission to test can result in severe legal consequences.
-
-First lets try running mimikatz in our powershell shell 
+### Usage Steps
+1. First lets try running mimikatz in our powershell shell 
 ![mimikatz amsi trigger](https://github.com/user-attachments/assets/0003e944-34a8-477f-b900-fc6b67a3041f)
-SO as we can see amsi Triggered, now lets run our tool 
+As we can see amsi Triggered.<br><br>
+2. Now, let's run our tool 
 You will be prompted to confirm your intent before the script proceeds to neutralize AMSI within the session.
-![Running nukeamsi](https://github.com/user-attachments/assets/ce380592-5b7f-4521-ac55-3b503eb1c62d)
+![Running nukeamsi](https://github.com/user-attachments/assets/ce380592-5b7f-4521-ac55-3b503eb1c62d)<br><br>
 
-Now we can run mimikatz without worrying about windows defender bothering us
+3. Now we can run mimikatz without worrying about windows defender bothering us.
 ![nukeamsi2](https://github.com/user-attachments/assets/8bff87d5-797b-4a53-89ad-4a7978ec6833)
 
 ### Conclusion
 
 NukeAMSI represents the cutting edge of AMSI bypass techniques, offering a powerful, reliable, and stealthy solution for professionals who need to execute scripts in environments where AMSI is active. Whether you're conducting penetration testing, research, or learning more about Windows security internals, NukeAMSI provides the tools you need to operate effectively and securely.
+<br><br>
 
+> Note: This tool is intended for **educational purposes only*. It should be used responsibly and in compliance with all relevant laws and regulations. Unauthorized use of this tool on systems you do not own or have explicit permission to test can result in severe legal consequences.
 
 

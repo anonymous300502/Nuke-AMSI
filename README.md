@@ -15,8 +15,7 @@ Functions include NtOpenProcess, NtWriteVirtualMemory, VirtualProtectEx, and oth
 - *Direct Memory Manipulation*: NukeAMSI utilizes direct memory manipulation techniques to disable AMSI, leveraging the ntdll library and other critical Windows APIs. This ensures that AMSI is effectively bypassed without raising alerts or triggering additional security measures.
   
 - *Stealth Operations*: The tool operates in-memory, meaning it leaves no trace on disk. This makes it particularly useful in scenarios where maintaining operational security is paramount.
-  
-- *Highly Effective Bypass*: Unlike traditional AMSI bypass techniques that may involve patching specific functions, NukeAMSI attacks AMSI at a deeper level. By leveraging ntdll, it targets the heart of AMSI's detection mechanisms, ensuring a higher success rate even against updated antivirus engines.
+ 
 
 ### Technical Breakdown
 

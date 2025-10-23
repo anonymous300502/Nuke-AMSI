@@ -1,5 +1,7 @@
 
 ![banner](https://s11.gifyu.com/images/SysSH.gif)<br>
+
+Note: The current script is now being detected. In order to use it, please use some cryptor or obfuscator. Do not use on systems you don't have explicit permission to use on.<br>
 The AMSI Nuke Script is a PowerShell-based utility designed to modify the Anti-Malware Scan Interface (AMSI) in running PowerShell processes. This script exploits Windows API functions to alter the memory of the amsi.dll, effectively disabling its malware scanning capabilities. It serves as an educational tool for security researchers and penetration testers to understand AMSI's role in malware defense and the implications of circumventing such mechanisms.
 
 #This version is now being flagged, contact for a obfuscated working version. 
